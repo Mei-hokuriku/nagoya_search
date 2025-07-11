@@ -29,7 +29,7 @@ price_type = st.radio(
 
 price = "price_lunch" if price_type == "ランチ価格" else "price_dinner"
 
-price_limit = st.slider("最低カット価格の上限", min_value=1000, max_value=10000, step=200, value=6000)
+price_limit = st.slider("最低価格の上限", min_value=1000, max_value=10000, step=200, value=6000)
 score_limit = st.slider("人気スコアの下限", min_value=0.0, max_value=35.0, step=2.0, value=5.0)
 
 
@@ -50,7 +50,7 @@ fig = px.scatter(
     x='pop_score',
     y=price,
     hover_data=['name_nagoya', 'address', 'star', 'review'],
-    title='人気スコアと最低カット価格の散布図'
+    title='人気スコアと最低価格の散布図'
 )
 
 st.plotly_chart(fig)
